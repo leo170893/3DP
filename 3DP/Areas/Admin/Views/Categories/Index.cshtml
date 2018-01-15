@@ -1,53 +1,55 @@
 ﻿@model IEnumerable<_3DP.Areas.Admin.Models.Entities.Category>
 
-@{
-    Layout = null;
-}
 
-<!DOCTYPE html>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-striped" id="tbCategories">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CatCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CatName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ParentCatCode)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CatCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CatName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ParentCatCode)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CatID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.CatID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CatID })
+                                </td>
+                            </tr>
+                        }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CatCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CatName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ParentCatCode)
-            </th>
-            <th></th>
-        </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CatCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CatName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ParentCatCode)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CatID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.CatID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.CatID })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

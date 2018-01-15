@@ -56,6 +56,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -119,9 +122,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
@@ -3016,6 +3016,14 @@
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono\skin.js" />
     <Content Include="Areas\Admin\Content\ckeditor\styles.js" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\css\dataTables.bootstrap.css" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\css\dataTables.bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\js\dataTables.bootstrap.js" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\js\dataTables.bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\License.txt" />
+    <Content Include="Areas\Admin\Content\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="Areas\Admin\Content\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="Areas\Admin\Content\datatables.net\License.txt" />
     <Content Include="Areas\Admin\Content\dist\css\AdminLTE.css" />
     <Content Include="Areas\Admin\Content\dist\css\AdminLTE.min.css" />
     <Content Include="Areas\Admin\Content\dist\css\alt\AdminLTE-bootstrap-social.css" />
@@ -4894,6 +4902,17 @@
     <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="BackupDB\db" />
+    <Content Include="Areas\Admin\Views\Home\Region\_Menu.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Region\_Footer.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Region\_Content.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Region\_Header.cshtml" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\.bower.json" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\bower.json" />
+    <Content Include="Areas\Admin\Content\datatables.net-bs\Readme.md" />
+    <Content Include="Areas\Admin\Content\datatables.net\.bower.json" />
+    <Content Include="Areas\Admin\Content\datatables.net\bower.json" />
+    <Content Include="Areas\Admin\Content\datatables.net\Readme.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -4922,7 +4941,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="BackupDB\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
