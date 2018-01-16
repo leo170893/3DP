@@ -1,0 +1,14 @@
+﻿body {
+}
+
+th {
+    text-align: center !important;
+}
+
+.form-group {
+    height: 30px;
+}
+
+.form-control {
+    border-radius: 4px !important;
+}

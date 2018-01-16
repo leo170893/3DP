@@ -1,19 +1,20 @@
 ﻿@model IEnumerable<_3DP.Areas.Admin.Models.Entities.Category>
 
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+}
 
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <p>
-                        @Html.ActionLink("Create New", "Create")
-                    </p>
+                    <button type="button" class="btn btn-success fa fa-plus" onclick="location.href='@Url.Action( "Edit","Categories")'"> Thêm</button>
                 </div>
                 <div class="box-body">
                     <table class="table table-bordered table-striped" id="tbCategories">
                         <thead>
-                            <tr>
+                            <tr class="bg-primary">
                                 <th>
                                     @Html.DisplayNameFor(model => model.CatCode)
                                 </th>
@@ -38,10 +39,10 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.ParentCatCode)
                                 </td>
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.CatID }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.CatID }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.CatID })
+                                <td width="230px">
+                                    <button type="button" class="btn btn-warning fa fa-pencil" onclick="location.href='@Url.Action( "Edit","Categories",new { id = item.CatID })'"> Sửa</button>
+                                    <button type="button" class="btn btn-info fa fa-eye" onclick="location.href='@Url.Action( "Details","Categories",new { id = item.CatID })'"> Xem</button>
+                                    <button type="button" class="btn btn-danger fa fa-trash" onclick="executeDelete(@item.CatID)"> Xóa</button>
                                 </td>
                             </tr>
                         }
@@ -52,4 +53,19 @@
         </div>
     </div>
 </section>
-
+<script>
+    function executeDelete(itemID) {
+        if (confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) {
+            debugger;
+            var pr = { id: itemID };
+            $.ajax({
+                type: "POST",
+                url: "Categories/Delete",
+                data: JSON.stringify(pr),
+                success: function (data) {
+                    alert("OK");
+                }
+            });
+        }
+    }
+</script>

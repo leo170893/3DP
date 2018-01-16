@@ -18,7 +18,7 @@ namespace _3DP.Areas.Admin.Controllers
         // GET: Admin/Categories
         public ActionResult Index()
         {
-            return View(db.DSCategory.ToList());
+            return View("ListCategory", db.DSCategory.ToList());
         }
 
         // GET: Admin/Categories/Details/5
@@ -34,12 +34,6 @@ namespace _3DP.Areas.Admin.Controllers
                 return HttpNotFound();
             }
             return View(category);
-        }
-
-        // GET: Admin/Categories/Create
-        public ActionResult Create()
-        {
-            return View();
         }
 
         // POST: Admin/Categories/Create
@@ -65,51 +59,60 @@ namespace _3DP.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("DetailCategory", new Category());
             }
             Category category = db.DSCategory.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            category.State = (int)EntityState.Modified;
+            return View("DetailCategory", category);
         }
-
-        // POST: Admin/Categories/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Hàm cất chung khi thêm/sửa
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CatID,CatCode,CatName,ParentCatCode")] Category category)
+        public ActionResult Save([Bind(Include = "CatID,CatCode,CatName,ParentCatCode,State")] Category category)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
+                if (category.State != (int)EntityState.Modified)
+                {
+                    db.DSCategory.Add(category);
+                }
+                else
+                {
+                    category.ModifyDate = DateTime.Now;
+                    db.Entry(category).State = EntityState.Modified;
+                }
                 db.SaveChanges();
-                return RedirectToAction("Index");
             }
-            return View(category);
+            return RedirectToAction("Index");
         }
 
-        // GET: Admin/Categories/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.DSCategory.Find(id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-            return View(category);
-        }
+        //// GET: Admin/Categories/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Category category = db.DSCategory.Find(id);
+        //    if (category == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(category);
+        //}
 
         // POST: Admin/Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             Category category = db.DSCategory.Find(id);
             db.DSCategory.Remove(category);

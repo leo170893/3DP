@@ -149,11 +149,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Constant\CommonEnum.cs" />
     <Compile Include="Areas\Admin\Constant\ErrorMessageConstant.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\DBContext.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\DBContextCommon.cs" />
+    <Compile Include="Areas\Admin\Models\Entities\BaseEntity.cs" />
     <Compile Include="Areas\Admin\Models\Entities\Bill.cs" />
     <Compile Include="Areas\Admin\Models\Entities\Category.cs" />
     <Compile Include="Areas\Admin\Models\Entities\News.cs" />
@@ -3016,6 +3018,7 @@
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono\images\spinner.gif" />
     <Content Include="Areas\Admin\Content\ckeditor\skins\moono\skin.js" />
     <Content Include="Areas\Admin\Content\ckeditor\styles.js" />
+    <Content Include="Areas\Admin\Content\Custom\css\common.css" />
     <Content Include="Areas\Admin\Content\datatables.net-bs\css\dataTables.bootstrap.css" />
     <Content Include="Areas\Admin\Content\datatables.net-bs\css\dataTables.bootstrap.min.css" />
     <Content Include="Areas\Admin\Content\datatables.net-bs\js\dataTables.bootstrap.js" />
@@ -4897,11 +4900,8 @@
     <Content Include="Areas\Admin\Views\Home\Login.cshtml" />
     <Content Include="Areas\Admin\Content\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="Areas\Admin\Content\plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="Areas\Admin\Views\Categories\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\DetailCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Categories\ListCategory.cshtml" />
     <Content Include="BackupDB\db" />
     <Content Include="Areas\Admin\Views\Home\Region\_Menu.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Region\_Footer.cshtml" />

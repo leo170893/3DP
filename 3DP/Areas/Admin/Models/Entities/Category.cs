@@ -6,7 +6,7 @@ using _3DP.Areas.Admin.Constant;
 namespace _3DP.Areas.Admin.Models.Entities
 {
     [Table("tb_Category")]
-    public class Category
+    public class Category : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
