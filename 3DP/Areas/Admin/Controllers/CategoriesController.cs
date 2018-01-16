@@ -57,6 +57,7 @@ namespace _3DP.Areas.Admin.Controllers
             }
 
             return View(category);
+
         }
 
         // GET: Admin/Categories/Edit/5
