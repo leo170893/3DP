@@ -21,7 +21,7 @@ namespace _3DP.Areas.Admin.Models.Entities
         [Required(ErrorMessage = ErrorMessageConstant.Require)]
         [Display(Name = "Ngày lập hóa đơn")]
         [Column(TypeName = "date")]
-        public string BillDate { get; set; }
+        public DateTime BillDate { get; set; }
 
         [StringLength(20, ErrorMessage = "Tối đa 20 ký tự")]
         [Display(Name = "Mã khuyến mãi")]

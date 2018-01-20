@@ -8,7 +8,7 @@ using System.Web;
 
 namespace _3DP.Areas.Admin.Models.Entities
 {
-    [Table("tb_Order")]
+    [Table("tb_Promote")]
     public class Promote
     {
         [Key]

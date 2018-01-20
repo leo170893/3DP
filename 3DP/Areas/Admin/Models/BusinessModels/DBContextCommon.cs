@@ -10,11 +10,11 @@ namespace _3DP.Areas.Admin.Models.BusinessModels
         {
 
         }
-        public DbSet<User> DSUser { set; get; }
+        //public DbSet<User> DSUser { set; get; }
         public DbSet<Category> DSCategory { set; get; }
         //public DbSet<Bill> DSBill { set; get; }
         //public DbSet<Order> DSOrder { set; get; }
-        //public DbSet<Product> DSProduct { set; get; }
+        public DbSet<Product> DSProduct { set; get; }
         //public DbSet<News> DSNews { set; get; }
         //public DbSet<Promote> DSPromote { set; get; }
     }

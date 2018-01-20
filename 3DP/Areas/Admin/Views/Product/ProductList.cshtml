@@ -1,0 +1,70 @@
+﻿@model IEnumerable<_3DP.Areas.Admin.Models.Entities.Product>
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProductList</h2>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <button type="button" class="btn btn-success fa fa-plus" onclick="location.href='@Url.Action( "Create","Product")'"> Thêm</button>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-striped" id="tbCategories">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ProductName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CatCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Quantity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Image)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CatCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Image)
+                                </td>
+                                <td width="230px">
+                                    <button type="button" class="btn btn-warning fa fa-pencil" onclick="location.href='@Url.Action( "Edit","Categories",new { id = item.ProductID })'"> Sửa</button>
+                                    <button type="button" class="btn btn-info fa fa-eye" onclick="location.href='@Url.Action( "Details","Categories",new { id = item.ProductID })'"> Xem</button>
+                                    <button type="button" class="btn btn-danger fa fa-trash" onclick="executeDelete(@item.ProductID)"> Xóa</button>
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

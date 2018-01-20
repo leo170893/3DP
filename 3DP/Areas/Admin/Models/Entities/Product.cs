@@ -23,6 +23,11 @@ namespace _3DP.Areas.Admin.Models.Entities
         [Column(TypeName = "nvarchar")]
         public string ProductCode { get; set; }
 
+        [StringLength(20, ErrorMessage = "Số lượng")]
+        [Display(Name = "Số lượng")]
+        [Column(TypeName = "nvarchar")]
+        public string Quantity { get; set; }
+
         [Required(ErrorMessage = ErrorMessageConstant.Require)]
         [Display(Name = "Danh mục")]
         [Column(TypeName = "nvarchar")]

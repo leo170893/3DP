@@ -150,6 +150,7 @@
     <Compile Include="Areas\Admin\Constant\ErrorMessageConstant.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\DBContext.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\DBContextCommon.cs" />
     <Compile Include="Areas\Admin\Models\Entities\BaseEntity.cs" />
@@ -4910,6 +4911,7 @@
     <Content Include="Areas\Admin\Content\datatables.net\.bower.json" />
     <Content Include="Areas\Admin\Content\datatables.net\bower.json" />
     <Content Include="Areas\Admin\Content\datatables.net\Readme.md" />
+    <Content Include="Areas\Admin\Views\Product\ProductList.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
